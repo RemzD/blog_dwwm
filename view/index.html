@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Le Blog du siècle</title>
+    <script src="./js/blog.js"></script>
+    <script src="./js/post.js"></script>
+    <script src="./js/visitor.js"></script>
+    <script src="./js/comment.js"></script>
+    <script src="./js/display.js"></script>
+    <script src="./js/createVisitor.js"></script>
+    <script src="./js/createComment.js"></script>
+    <script src="./js/createCommentButton.js"></script>
+    <script src="./js/createPost.js"></script>
+    <script src="./js/createPostBlock.js"></script>
+    <script src="./js/createCommentsBlock.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/user.js"></script>
+    <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <header>
+        <p id="pseudo"></p>
+        <button onclick="display.selectVisible('newPost', 0)" disabled>
+            Poster
+        </button>
+        <button onclick="display.selectVisible('newVisitor', 0)">Nouveau visiteur</button>
+
+    </header>
+
+    <div id="blog"></div>
+
+    <form class="formulary" id="newPost">
+        <label for="postTitle">Titre de l'article</label>
+        <input id="textTitlePost" type="text" name="postTitle" required>
+
+        <label for="postContent">Contenu de l'article</label>
+        <textarea id="textNewPost" name="postContent" required></textarea>
+
+        <input type="button" value="Envoyer">
+
+    </form>
+
+    <div class="formulary" id="newComment">
+        Contenu du commentaire <textarea id="textNewComment"></textarea>
+        <input id="numPost" type="hidden">
+        <button onclick="display.createComment()">Envoyer</button>
+    </div>
+
+    <div class="formulary" id="newVisitor">
+        Pseudo <input type="text" id="textPseudo"><br> Mail <input id="textMail" type="email">
+        <button onclick="display.createVisitor()">Envoyer</button>
+    </div>
+</body>
+
+</html>

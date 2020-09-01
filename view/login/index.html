@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Formulaire de connexion</title>
+
+    <script src='/js/form.js' defer></script>
+    <script src='./js/main.js' defer></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+
+    <form action="./login.php" id="login-form" method="POST">
+        <h2>CONNEXION</h2>
+
+        <label for="mail">Email&nbsp;:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Mot de passe&nbsp;:</label><br>
+        <input type="password" id="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,72}$" required>
+
+        <p id="bad-password">
+            Identifiants incorrects.
+        </p>
+
+        <input id="login-button" type="button" value="Connexion">
+
+        <a href="/reset_password">Mot de Passe Oublié</a>
+        <a href="/signup">S'inscrire</a>
+
+    </form>
+</body>
+
+</html>

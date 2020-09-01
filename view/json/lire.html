@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+﻿
+﻿<!-- Fichier de test servant à visualiser un fichier JSON dans un tableau -->
+﻿
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Affichage de test</title>
+    <script src="afficher.js"></script>
+    <script>
+        function lancer() {
+            var xhr = new XMLHttpRequest();
+            // URL du flux de données à lire; fonction intègre à js, on crée une instance on la recupère ; sert à instancier l'objet qui permet de se connecter au serveur
+            var proto = document.getElementById("proto").value;
+            var url = document.getElementById("url").value;
+            xhr.open(proto,url, true);//j'ouvre une connection avec open. "connect proto et url à xhr. 
+            xhr.onreadystatechange = function () {// à chaque changement d'etat j'apple cette fonction.
+                // Quand le résultat est OK
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {//lorsque le serveur nous envoi les données.
+                    var array = JSON.parse(this.responseText);//parsing=analyser, tu prend le text de JSON et tu me le parse(analyse).
+                    afficher(array);//une fois parsé tu me le met dans un tableau(tableau d'objet java script).
+                }
+            }
+            // On envoie la demande, les valeurs à envoyer sont dans la chaine de caractères.
+            xhr.send("");
+        }
+    </script>
+    <style>
+        #tab td, th {
+            border: 1px solid black;
+        }
+        #url {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <label>POST</label><input type="radio" name="proto" id="proto" value="POST" checked>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <labet>GET</labet><input type="radio" name="proto" id="proto" value="GET">
+    </p>
+    <p>
+        <label>URL</label>
+        <input type="url" name="url" id="url" value="https://blog.dwwm.ovh/test.php">
+    </p>
+    <p><input type="button" value="Valider" onclick="lancer()"></p>
+<table id="tab">
+
+</table>
+</body>
+</html>

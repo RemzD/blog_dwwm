@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>formulaire d'inscription</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="../js/form.js"></script>
+    <script src="js/signup_form.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+
+<body>
+    <form action="signup.php" id="form" id="form" method="post">
+        <h2>INSCRIPTION</h2>
+
+
+        <label class="formulary" id="pseudo">  Pseudo</label>
+
+        <input name="pseudo" id="textPseudo" type="text" required/>
+
+
+        <label class="formulary" id="password">
+            Mot de passe </label>
+        <input name="password" id="textPassword" type="password" pattern="^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[@$!%*?&])\S{8,72}$" title="Doit contenir au moins un chiffre et une lettre majuscule et minuscule, caractères spéciaux @$!%*?& et au moins 8 caractères ou plus "
+            required/>
+
+
+
+        <label class="formulary" id="password2">
+            Taper de nouveau le mot de passe   </label>
+        <input name="password2" id="textPassword2" type="password" pattern="^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[@$!%*?&])\S{8,72}$" title="Doit contenir au moins un chiffre et une lettre majuscule et minuscule, caractères spéciaux @$!%*?& et au moins 8 caractères ou plus "
+            required/>
+
+
+
+        <label class="formulary" id="email">Email</label>
+
+        <input name="email" id="textEmail" type="email" required>
+
+
+
+        <input type="button" id="button" value="envoyer">
+
+
+        <span id="message"></span>
+    </form>
+
+
+
+</body>
+
+
+</html>

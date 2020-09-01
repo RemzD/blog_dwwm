@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="/js/form.js" defer></script>
+    <script src="./js/send_email.js" defer></script>
+
+    <title>Mot De Passe Oublié</title>
+</head>
+
+<body>
+    <h2>Mot de passe oublié</h2>
+    <p id='errorMessage' style='visibility: hidden'>
+        Votre email n'a pas été trouvé dans la base de donnée, veuillez vérifier votre email et réessayer.
+    </p>
+    <p id='succesMessage' style='visibility: hidden'>
+        Un email vous a été envoyé avec un lien d'activation du nouveau mot de passe.
+    </p>
+    <form id="sendEmailForm" method="POST">
+        <p>
+            Veuillez saisir l'adresse Email avec laquelle vous vous êtes inscrit ci-dessous. Ensuite les instructions pour réinitialiser votre mot de passe vous seront envoyées par email.
+        </p>
+
+        <label for="mail">Email</label>
+        <input type="email" id="email" name="email" required>
+        <input type="button" value="Soumettre">
+    </form>
+</body>
+
+</html>
